@@ -22,4 +22,17 @@
     - "export DISPLAY=:99.0"
     - if [[ "$TRAVIS_OS_NAME" == "linux" && "$HOSTTYPE" != "powerpc64le" ]]; then sh ci/before_script_linux.sh; fi
     - make validate
-  script: make test
+  jobs:
+    include:
+      - stage: test
+        script: make test
+      - stage: GitHub Release
+        script: make pass
+        os: osx
+        file: "bin/docker-credential-pass"
+        deploy:
+          provider: releases
+          api_key: $GITHUB_OAUTH_TOKEN
+          skip_cleanup: true
+          on:
+            tags: true

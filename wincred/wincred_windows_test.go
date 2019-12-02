@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/docker/docker-credential-helpers/credentials"
+	"github.com/ellsclytn/docker-credential-helpers/credentials"
 )
 
 func TestWinCredHelper(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/docker/docker-credential-helpers/credentials"
+	"github.com/ellsclytn/docker-credential-helpers/credentials"
 )
 
 const (

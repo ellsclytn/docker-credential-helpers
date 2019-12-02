@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/ellsclytn/docker-credential-helpers/credentials"
-	"github.com/ellsclytn/docker-credential-helpers/wincred"
+	"github.com/ellsclytn/docker-credential-helpers/pass"
 )
 
 func main() {
-	credentials.Serve(wincred.Wincred{})
+	credentials.Serve(pass.Pass{})
 }

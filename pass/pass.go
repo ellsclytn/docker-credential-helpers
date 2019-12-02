@@ -16,12 +16,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/docker/docker-credential-helpers/credentials"
+	"github.com/ellsclytn/docker-credential-helpers/credentials"
 )
 
 const PASS_FOLDER = "docker-credential-helpers"
 
-// Pass handles secrets using Linux secret-service as a store.
+// Pass handles secrets using secret-service as a store.
 type Pass struct{}
 
 // Ideally these would be stored as members of Pass, but since all of Pass's

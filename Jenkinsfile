@@ -1,7 +1,7 @@
 pipeline {
     agent none
     options {
-        checkoutToSubdirectory('src/github.com/docker/docker-credential-helpers')
+        checkoutToSubdirectory('src/github.com/ellsclytn/docker-credential-helpers')
     }
     stages {
         stage('build') {
@@ -24,7 +24,7 @@ pipeline {
                     }
                     steps {
                         container('golang') {
-                            dir('src/github.com/docker/docker-credential-helpers') {
+                            dir('src/github.com/ellsclytn/docker-credential-helpers') {
                                 sh 'apt-get update && apt-get install -y libsecret-1-dev pass'
                                 sh 'make deps fmt lint test'
                                 sh 'make pass secretservice'
@@ -43,7 +43,7 @@ pipeline {
                         GOPATH = pwd()
                     }
                     steps {
-                        dir('src/github.com/docker/docker-credential-helpers') {
+                        dir('src/github.com/ellsclytn/docker-credential-helpers') {
                             sh 'make deps fmt lint test'
                             sh 'make osxcodesign'
                             sh 'make osxrelease'
@@ -62,7 +62,7 @@ pipeline {
                         PFXPASSWORD = credentials('windows-build-2019-pfx-password')
                     }
                     steps {
-                        dir('src/github.com/docker/docker-credential-helpers') {
+                        dir('src/github.com/ellsclytn/docker-credential-helpers') {
                             sh 'echo ${PFX} | base64 -d > pfx'
 
                             sh 'make deps fmt lint test'

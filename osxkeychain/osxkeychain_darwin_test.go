@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/docker/docker-credential-helpers/credentials"
+	"github.com/ellsclytn/docker-credential-helpers/credentials"
 )
 
 func TestOSXKeychainHelper(t *testing.T) {

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/docker/docker-credential-helpers/credentials"
-	"github.com/docker/docker-credential-helpers/pass"
+	"github.com/ellsclytn/docker-credential-helpers/credentials"
+	"github.com/ellsclytn/docker-credential-helpers/pass"
 )
 
 func main() {
